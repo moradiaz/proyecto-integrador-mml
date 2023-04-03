@@ -1,4 +1,7 @@
 const indexController =  {
+    principal:function(req, res, next) {
+        res.render('index');
+      },
     index: function (req,res) {
         return res.render("register")
         
