@@ -5,7 +5,7 @@ const controladorP = require('../controllers/productControllers');
 
 
 
-
+router.get('/', productControllers.producto)
 router.get("/agregarproducto", productControllers.agregar);
 
 
