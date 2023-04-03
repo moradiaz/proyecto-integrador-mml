@@ -8,8 +8,9 @@ const controladorI = require('../controllers/indexController')
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.get("/register", indexController.index )
-router.get("/login", indexController.login )
+router.get("/register", indexController.index)
+router.get("/login", indexController.login)
+router.get("/search",indexController.search)
 
 
 module.exports = router;

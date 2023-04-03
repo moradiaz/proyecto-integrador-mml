@@ -6,8 +6,11 @@ const indexController =  {
     login: function (req,res) {
         return res.render("login")
         
+    },
+    search: function (req,res) {
+        return res.render("search-results")
+        
     }
-
 }
 
 
