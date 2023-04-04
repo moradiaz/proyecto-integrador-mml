@@ -3,8 +3,8 @@ const data ={
         email: "pablolima@gmail.com",
         nombreUsuario:"pablo_lima",
         contraseña:"pablito1234",
-        fecha:"16/05/1998",
-        documento:"41545127",
+        fecha:16/05/1998,
+        documento:41545127,
         foto: "/images/users/user_image.jpeg"
     },
     productos: [
