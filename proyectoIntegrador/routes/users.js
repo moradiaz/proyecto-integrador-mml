@@ -4,7 +4,7 @@ const usersController = require('../controllers/usersController')
 
 /* GET users listing. */
 
-router.get('/', usersController.perfil);
+router.get('/perfil', usersController.perfil);
 
 router.get("/editarperfil", usersController.editar )
 
