@@ -15,12 +15,16 @@ const data ={
         fechaCarga: "15/03/23", 
         cover: "/images/products/skin-1.jpg"
         },
+        {nombre: "The Ordinary",
+        descripcion: "Crema facial con vitamina C, ideal para todo tipo de piel.",
         {id: 2,
         nombre: "The Ordinary",
         descripcion: "Crema facial con vitamina C, ideal para todo tipo de piel. Actua como antioxidante y rejuvenecedora ",
         fechaCarga: "02/04/23",
         cover: "/images/products/skin-2.jpg"
         },
+        {nombre: "Drunk Elephant Oil",
+        descripcion: "Oleo facial con antioxidantes, omega 6 y 9.",
         {id: 3,
         nombre: "Drunk Elephant Oil",
         descripcion: "Oleo facial con antioxidantes, omega 6 y 9, que ayuda a restaurar tu piel, dejando un acabado glowy ",
@@ -69,29 +73,27 @@ const data ={
         fechaCarga: "08/05/23",
         cover:"/images/products/skin-10.jpg"
         }
-
-        
     ],
     comentarios: [
-        {nombreUsuario: "Julieta_ruiz19",
+        {nombreUsuarios: "Julieta_ruiz19",
         comentario: "Excelente producto!!",
-        imagen: "./images/users/user_image.jpeg"
+        imagen: "/images/users/user_image.jpeg"
         },
-        {nombreUsuario: "Luz__gutierrez11",
+        {nombreUsuarios: "Luz__gutierrez11",
         comentario: "Me encanto, lo recomiento100%",
-        imagen: "./images/users/user_image.jpeg"
+        imagen: "/images/users/user_image.jpeg"
         },
-        {nombreUsuario: "pedro-colleta",
+        {nombreUsuarios: "pedro-colleta",
         comentario: "Me dejo la piel hermosa, nunca había visto algo así",
-        imagen: "./images/users/user_image.jpeg"
+        imagen: "/images/users/user_image.jpeg"
         },
-        {nombreUsuario: "claudia_fernadez00",
+        {nombreUsuarios: "claudia_fernadez00",
         comentario: "No justifica el precio, hay productos mejores con un precio más bajo",
-        imagen: "./images/users/user_image.jpeg"
+        imagen: "/images/users/user_image.jpeg"
         },
-        {nombreUsuario: "santiago_delia",
+        {nombreUsuarios: "santiago_delia",
         comentario: "Mi piel esta como nueva",
-        imagen: "./images/users/user_image.jpeg"
+        imagen: "/images/users/user_image.jpeg"
         }
 
     ]

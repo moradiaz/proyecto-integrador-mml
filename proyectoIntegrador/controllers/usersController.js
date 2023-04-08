@@ -2,7 +2,7 @@ const data= require("../data/data")
 
 const usersController = {
     perfil: function(req, res) {
-        return res.render('profile', {usuario:data.usuario});
+        return res.render('profile', {data:data});
         
     },
     editar: function (req, res) {

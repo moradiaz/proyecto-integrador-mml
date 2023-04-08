@@ -4,9 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="/images/skin-addict.png" />
+	<link width="" rel="shortcut icon" href="/images/skin-logo.png />
 
-	<title> Mercado Liebre Argentina</title>
+	<title> Skin Addict</title>
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
@@ -19,7 +19,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Nombre del producto</h2> 
+			<h2 class="products-title"><%= data.productos[0].nombre %></h2> 
 			<p class="product-detail-description">
 				<a href="/product/agregarproducto">Editar</a>
 			</p>
@@ -27,56 +27,23 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="images/users/skin.jpg" alt="" class="product-detail-img">
+					<img src="<%= data.productos[0].cover %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						Descripción corta del producto. En la página principal solo se ven 2 líneas de estar descripción.Lorem ipsum dolor,
-						sit amet consectetur adipisicing elit. Tae ipsam amet eum, totam dolore libero illo unde? Consectetur dolorem neque
-						veritatis.</p>
+						<%= data.productos[0].descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<article>
-							<img src="images/users/user_image.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/users">Nombre usuario: </a> </strong>
-								 Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore magnam, praesentium explicabo inventore molestias facilis labore. Fugit ipsa mollitia odit inventore consequuntur.</p>
-							</div>
-						</article>
-						<article>
-							<img src="images/users/user_image.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/users">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur.</p>
-							</div>
-						</article>
-						<article>
-							<img src="images/users/user_image.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/users">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									</p>
-							</div>
-						</article>
-						<article>
-							<img src="images/users/user_image.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/users">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet.</p>
-							</div>
-						</article>
-						<article>
-							<img src="images/users/user_image.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/users">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore</p>
-							</div>
-						</article>
+						<% for( let i = 0; i < 5; i++ ) { %>
+							<article>
+								<img src="<%= data.comentarios[i].imagen %>" alt="">
+								<div class="data">
+									<p class="user">
+									<strong> <a href="/users"><%= data.comentarios[i].nombreUsuarios %></a> </strong>
+									<br>
+									 <%= data.comentarios[i].comentario %></p>
+								</div>
+							</article>
+						<% } %>
 
 					</section>
 					<form class="form" action="" method="POST">

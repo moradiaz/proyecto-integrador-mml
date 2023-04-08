@@ -1,7 +1,8 @@
 const data= require("../data/data")
+
 const indexController =  {
     principal:function(req, res, next) {
-        res.render('index',{productos:data.productos});
+        res.render('index', {productos:data.productos});
       },
     index: function (req,res) {
         return res.render("register")
