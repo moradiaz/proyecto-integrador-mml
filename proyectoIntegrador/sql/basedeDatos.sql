@@ -68,3 +68,27 @@ values ('Glossier Serum','Serum de acido hialuronico que contiene vitamina B5',5
 
 insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
 values ('Lip Treatment','balsamo labial reparador que hidrata la piel', 1);
+
+create table comentarios(
+id int unsigned primary key auto_increment,
+usuarios_id int unsigned not null, 
+foreign key (usuarios_id) references usuarios(id),
+productos_id int unsigned not null,
+foreign key (productos_id) references tabla_productos (id),
+comentario varchar(500) not null, 
+createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+deletedAt TIMESTAMP null
+);
+
+insert into comentarios(comentario, usuarios_id, productos_id)
+values("Excelente producto!!", 2, 4);
+
+insert into comentarios(comentario, usuarios_id, productos_id)
+values("Me encanto lo recomiendo 100%", 3, 9);
+
+insert into comentarios(comentario, usuarios_id, productos_id)
+values("Me encanto, lo recomiendo 100%", 1, 7);
+
+insert into comentarios(comentario, usuarios_id, productos_id)
+values("Me dejo la piel hermosa, nuna había visto algo así", 4, 6);
