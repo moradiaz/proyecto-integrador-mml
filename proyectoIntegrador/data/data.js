@@ -5,7 +5,7 @@ const data ={
         contraseña:"pablito1234",
         fecha:16/05/1998,
         documento:41545127,
-        foto: "/images/users/user_image.jpeg"
+        foto: "/images/users/pablo_image.png"
     },
     productos: [
 
