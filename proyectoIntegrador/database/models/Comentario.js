@@ -42,7 +42,7 @@ module.exports=function (sequelize, dataTypes) {
     const Comentario = sequelize.define(alias,cols,config); //nos permite definir asignaciones entre un modelo y una tabla 
      Comentario.associate =function (models) {
         Comentario.belongsTo(models.Producto, {
-            as:'comentario',
+            as:'comentarios',
             foreignKey:'productos_id',
         })
         
