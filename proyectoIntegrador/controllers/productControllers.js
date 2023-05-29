@@ -14,13 +14,13 @@ const productControllers =  {
     all: function(req, res, next) {
         let relaciones = {
             include:[
-                {association:'productos_usuarios'},
+                {association:'productosUsuarios'},
                 {association:'comentarios'}
             ]
         }
         Product.findAll(relaciones)
         .then(function(data){
-            return res.render('index', {title: 'mi título', data:data});
+            return res.render('index', {title: 'mi título', productos:data});
 
         }).catch(function(error){
             console.log(error);

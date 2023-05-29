@@ -31,17 +31,17 @@ module.exports = function (sequelize, dataTypes) {
     let config = {
         tableName: 'tabla_productos', 
         timestamps: false, 
-        underscored: true
+        underscored: false
     }
     const Producto = sequelize.define(alias,cols,config);
     Producto.associate = function(models) {
         Producto.hasMany(models.Comentario, {
             as:'comentarios', 
-            foreignKey: 'productos_id', 
+            foreignKey: 'productosId', 
         
         });
         Producto.belongsTo(models.Usuario, {
-            as: 'productos_usuarios', 
+            as: 'productosUsuarios', 
             foreignKey: 'idUsuario'
         }) 
     

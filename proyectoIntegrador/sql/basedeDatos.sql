@@ -71,132 +71,132 @@ values ('Lip Treatment','balsamo labial reparador que hidrata la piel', 1);
 
 create table comentarios(
 id int unsigned primary key auto_increment,
-usuarios_id int unsigned not null, 
-foreign key (usuarios_id) references usuarios(id),
-productos_id int unsigned not null,
-foreign key (productos_id) references tabla_productos (id),
+usuariosId int unsigned not null, 
+foreign key (usuariosId) references usuarios(id),
+productosId int unsigned not null,
+foreign key (productosId) references tabla_productos (id),
 comentario varchar(500) not null, 
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 deletedAt TIMESTAMP null
 );
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 2, 4);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 3, 4);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 1, 4);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 4, 4);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 3, 2);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 1, 2);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 4, 2);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 2, 2);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 1, 6);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 5, 6);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 2, 6);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 3, 6);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 2, 9);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 4, 9);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 3, 9);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 5, 9);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 2, 3);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 3, 3);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 1, 3);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 4, 3);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 2, 7);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 3, 7);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 1, 7);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 4, 7);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 2, 1);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 3, 1);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 1, 1);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 4, 1);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 2, 5);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 3, 5);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 1, 5);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 4, 5);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 2, 8);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 3, 8);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 1, 8);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 4, 8);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Excelente producto!!", 2, 10);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto lo recomiendo 100%", 3, 10);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me encanto, lo recomiendo 100%", 1, 10);
 
-insert into comentarios(comentario, usuarios_id, productos_id)
+insert into comentarios(comentario, usuariosId, productosId)
 values("Me dejo la piel hermosa, nuna había visto algo así", 4, 10);

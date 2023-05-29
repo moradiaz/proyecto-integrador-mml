@@ -6,11 +6,11 @@ module.exports=function (sequelize, dataTypes) {
             primaryKey:true,
             type:dataTypes.INTEGER
         },
-        idUsuario:{
+        usuariosId:{
             type:dataTypes.INTEGER
 
         },
-        productos_id:{
+        productosId:{
             type:dataTypes.TEXT
 
         },
@@ -36,14 +36,14 @@ module.exports=function (sequelize, dataTypes) {
     let config={
         tableName:'comentarios', //el mismo nombre de la tabla 
         timestamps:false,
-        underscored:true //si usamos guines bajos 
+        underscored:false //si usamos guines bajos 
     }
 
     const Comentario = sequelize.define(alias,cols,config); //nos permite definir asignaciones entre un modelo y una tabla 
      Comentario.associate =function (models) {
         Comentario.belongsTo(models.Producto, {
             as:'comentarios',
-            foreignKey:'productos_id',
+            foreignKey:'productosId',
         })
         
     }
