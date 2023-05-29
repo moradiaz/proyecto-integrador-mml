@@ -34,7 +34,7 @@ module.exports=function (sequelize, dataTypes) {
         
     }
     let config={
-        tableName:'tabla_productos', //el mismo nombre de la tabla 
+        tableName:'comentarios', //el mismo nombre de la tabla 
         timestamps:false,
         underscored:true //si usamos guines bajos 
     }
