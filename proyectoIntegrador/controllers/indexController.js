@@ -1,4 +1,6 @@
 const data= require("../data/data")
+const db = require('../database/models')
+const Product = db.Product;
 
 const indexController =  {
     principal:function(req, res, next) {

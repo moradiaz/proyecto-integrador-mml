@@ -13,7 +13,7 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING
         }, 
         descripcion: {
-            type: dataTypes.STRING(1000)
+            type: dataTypes.STRING
         }, 
         createdAt: {
             type: dataTypes.DATE,
@@ -29,7 +29,7 @@ module.exports = function (sequelize, dataTypes) {
         }
     }
     let config = {
-        tableName: 'prodcutos', 
+        tableName: 'tabla_productos', 
         timestamps: false, 
         underscored: true
     }

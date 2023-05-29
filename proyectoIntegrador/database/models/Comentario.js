@@ -17,15 +17,15 @@ module.exports=function (sequelize, dataTypes) {
         comentario:{
             type:dataTypes.STRING
         },
-        created_at:{
+        createdAt:{
             type:dataTypes.DATE,
             allowNull: false,
         },
-        updated_at:{
+        updatedAt:{
             type:dataTypes.DATE,
             allowNull: false,
         },
-        deleted_at:{
+        deletedAt:{
             type:dataTypes.DATE,
             allowNull: true,
         }
