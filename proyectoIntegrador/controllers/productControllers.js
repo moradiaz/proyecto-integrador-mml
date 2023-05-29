@@ -10,23 +10,7 @@ const productControllers =  {
     },
     producto: function (req, res) {
         return res.render('product', {data:data})
-    },
-    all: function(req, res, next) {
-        let relaciones = {
-            include:[
-                {association:'productosUsuarios'},
-                {association:'comentarios'}
-            ]
-        }
-        Product.findAll(relaciones)
-        .then(function(data){
-            return res.render('index', {title: 'mi título', productos:data});
-
-        }).catch(function(error){
-            console.log(error);
-            res.send({error})
-        })
-}
+    }
 }
 
 module.exports = productControllers;

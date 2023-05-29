@@ -37,10 +37,10 @@
 								<img src="<%= productos[i].cover %>" alt="crema">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= productos[i].nombre %></h2>
+								<h2><%= productos[i].nombreProducto %></h2>
 								<p><%= productos[i].descripcion %></p>
 								<p>Fecha de carga: <%= productos[i].createdAt %></p>
-								<p>Comentarios: 12</p>
+								<p>Cargado por <%= productos[i].productosUsuarios.usuario %></p>
 							</article>
 						</a>
 					</section>
@@ -64,10 +64,10 @@
 								<img src="<%= productos[i].cover %>" alt="skincare">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= productos[i].nombre %></h2>
+								<h2><%= productos[i].nombreProducto %></h2>
 								<p><%= productos[i].descripcion %></p>
 								<p>Fecha de carga: <%= productos[i].createdAt %></p>
-								<p>Comentarios: 12</p>
+								<a href="/perfil"><p>Cargado por <%= productos[i].productosUsuarios.usuario %></p></a>
 							</article>
 						</a>
 					</section>
