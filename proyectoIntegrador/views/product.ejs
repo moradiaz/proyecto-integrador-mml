@@ -18,7 +18,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= data.productos[0].nombre %></h2> 
+			<h2 class="products-title"><%= data.nombreProducto %></h2> 
 			<p class="product-detail-description">
 				<a href="/product/agregarproducto">Editar</a>
 			</p>
@@ -26,18 +26,18 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= data.productos[0].cover %>" alt="" class="product-detail-img">
+					<img src="<%= data.fotoProducto %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= data.productos[0].descripcion %></p>
+						<%= data.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for( let i = 0; i < 5; i++ ) { %>
+						<% for( let i = 0; i < comentarios.length; i++ ) { %>
 							<article>
-								<img src="<%= data.comentarios[i].imagen %>" alt="">
+								<img src="<%= comentarios[i].usuarioComentario.foto %>" alt="">
 								<div class="data">
 									<p class="user">
-									<strong> <a href="/users"><%= data.comentarios[i].nombreUsuarios %></a> </strong>
+									<strong> <a href="/users"><%= comentarios[i].usuarioComentario.usuario %></a> </strong>
 									<br>
 									 <%= data.comentarios[i].comentario %></p>
 								</div>

@@ -14,7 +14,10 @@ module.exports = function (sequelize, dataTypes) {
         }, 
         descripcion: {
             type: dataTypes.STRING
-        }, 
+        },
+        fotoProducto:{
+            type: dataTypes.STRING
+        },
         createdAt: {
             type: dataTypes.DATE,
             allowNull: false

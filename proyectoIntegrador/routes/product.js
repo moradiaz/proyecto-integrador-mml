@@ -5,7 +5,7 @@ var router = express.Router();
 
 
 
-router.get('/', productControllers.producto)
+router.get('/:id', productControllers.producto)
 router.get("/agregarproducto", productControllers.agregar);
 
 

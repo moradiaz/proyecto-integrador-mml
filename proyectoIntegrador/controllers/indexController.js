@@ -20,7 +20,8 @@ const indexController =  {
         
         .then(function(data){
            console.log(data);
-            return res.render('index', {productos:data});
+        return res.render('index', {productos:data});
+           
 
         }).catch(function(error){
             console.log(error);
