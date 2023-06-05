@@ -3,7 +3,6 @@ const db = require('../database/models')
 const User = db.Usuario;
 const bcryptjs = require('bcryptjs');
 
-
 const usersController = {
     perfil: function(req, res) {
         let id = req.params.id
@@ -53,23 +52,62 @@ const usersController = {
                         errors.message = "El email ya existe!";
                         res.locals.errors = errors;
                         res.render("register");
+                    }else{
+                        let passEncriptada = bcryptjs.hashSync(req.body.pass,12);
+                        let user= {
+                            usuario: req.body.user,
+                            email:req.body.mail,
+                            password: passEncriptada, 
+                            fecha: req.body.fechanacimiento, 
+                            dni: req.body.documento, 
+                            foto: req.body.foto
+                        }
+                        console.log(user);
+                        User.create(user); 
+                        res.redirect('/users/login');
                     }
                 }) 
                 .catch(error=>console.log(error))
 
         }
-        let passEncriptada = bcryptjs.hashSync(req.body.pass,12);
-        let user= {
-            usuario: req.body.user,
-            email:req.body.mail,
-            password: passEncriptada, 
-            fechanacimiento: req.body.fechanacimiento, 
-            documento: req.body.documento, 
-            foto: req.body.foto
-        }
-        User.create(user); 
-        res.redirect('/perfil');
+       
+    },
+    index: function (req,res){  
+        res.render("register")
+    },
+    login: function (req,res) {
+        return res.render("login")
+        
+    },
+    ingresar: function(req, res){
+        let errors = {};
+        let info = req.body;
+        let filtro ={
+            where:[{email:info.mail}]
+        };
+        User.findOne(filtro)
+        .then(result =>{
+            if (result =! null){
+                let check = bcryptjs.compareSync(info.password, result.password);
+                if (check){
+                    req.session.user = result.dataValues;
+                    req.locals.user = result.dataValues;
+                    if (info.recordame){
+                        res.cookie("userId",result.dataValues.id,{maxAge:1000 *60 *10})
+                    }
+                    return res.redirect('/')
+                }
+                else{
+                    errors.message ='Contraseña no coincide'
+                    res.locals.errors = errors;
+                    res.render('register')
+                }
+            }
+        })
+
+
     }
+
     
      
 

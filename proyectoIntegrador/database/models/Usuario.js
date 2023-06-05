@@ -26,11 +26,11 @@ module.exports = function(sequelize, dataTypes){
         },
         createdAt:{
             type: dataTypes.DATE,
-            allowNull: false
+            
         },
         updatedAt:{
             type: dataTypes.DATE,
-            allowNull: false
+            
         },
         deletedAt:{
             type: dataTypes.DATE,

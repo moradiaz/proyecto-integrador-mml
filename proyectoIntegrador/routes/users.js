@@ -6,6 +6,10 @@ const usersController = require('../controllers/usersController')
 
 router.get('/perfil/:id', usersController.perfil);
 router.post("/perfil", usersController.store);
-router.get("/editarperfil", usersController.editar )
+router.get("/editarperfil", usersController.editar);
+router.get("/register", usersController.index);
+router.get("/login", usersController.login);
+router.post('/login', usersController.ingresar);
+
 
 module.exports = router;

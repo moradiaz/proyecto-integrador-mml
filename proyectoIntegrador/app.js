@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productRouter = require("./routes/product")
+const session = require('express-session');
+var app = express();
 var app = express();
 
 // view engine setup
@@ -18,6 +20,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret:'Nuestro mensaje secreto',
+  resave: false,
+  saveUninitialized:true
+}))
+app.use(function (req,res,next) {
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user;
+  }
+  next();
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
