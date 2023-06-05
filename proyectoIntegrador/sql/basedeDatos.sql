@@ -33,41 +33,42 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 idUsuario INT UNSIGNED NOT NULL, 
 nombreProducto TEXT NOT NULL, 
 descripcion VARCHAR(1000) NOT NULL,  
+fotoProducto VARCHAR (1200) NOT NULL,
 FOREIGN KEY (idUsuario) REFERENCES usuarios(id),
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
 deletedAt TIMESTAMP NULL
 ); 
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('Hyaluronic Cream', 'Hidratante facial con ácido hialuronico, ideal para pieles mixtas a grasas, con acabado glowy',2);
+insert into tabla_productos (nombreProducto, descripcion, fotoProducto, idUsuario) 
+values ('Hyaluronic Cream', 'Hidratante facial con ácido hialuronico, ideal para pieles mixtas a grasas, con acabado glowy', "/images/products/skin-1.jpg",2);
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('The Ordinary','Crema facial con vitamina C, ideal para todo tipo de piel',3);
+insert into tabla_productos (nombreProducto, descripcion, fotoProducto, idUsuario) 
+values ('The Ordinary','Crema facial con vitamina C, ideal para todo tipo de piel',"/images/products/skin-2.jpg",3);
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('Drunk Elephant Oil','Oleo facial con antioxidantes, omega 6 y 9',4);
+insert into tabla_productos (nombreProducto, descripcion, fotoProducto, idUsuario) 
+values ('Drunk Elephant Oil','Oleo facial con antioxidantes, omega 6 y 9', "/images/products/skin-3.jpg",4);
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('Drunk Elephant Cream','Crema facial, ideal para pieles secas y cansadas',5);
+insert into tabla_productos (nombreProducto, descripcion, fotoProducto, idUsuario) 
+values ('Drunk Elephant Cream','Crema facial, ideal para pieles secas y cansadas',"/images/products/skin-4.jpg",5);
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('Unseen Sunscreen','Protector solar hidratante con SPF 40, con acabado luminoso', 1);
+insert into tabla_productos (nombreProducto, descripcion, fotoProducto, idUsuario) 
+values ('Unseen Sunscreen','Protector solar hidratante con SPF 40, con acabado luminoso',"images/products/skin-5.jpg", 1);
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('La Mer exfolator','Este exfoliante facial sensorial perfecciona la piel', 2);
+insert into tabla_productos (nombreProducto, descripcion,fotoProducto, idUsuario) 
+values ('La Mer exfolator','Este exfoliante facial sensorial perfecciona la piel',"/images/products/skin-6.jpg", 2);
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('Dermalogica','es un suave exfoliante enzimático a base de arroz', 3);
+insert into tabla_productos (nombreProducto, descripcion, fotoProducto, idUsuario) 
+values ('Dermalogica','es un suave exfoliante enzimático a base de arroz',"/images/products/skin-7.jpg", 3);
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('Drunk Elephant Body Lotion','Una loción ligera de rápida absorción con una mezcla de aceites humectantes',4);
+insert into tabla_productos (nombreProducto, descripcion, fotoProducto, idUsuario) 
+values ('Drunk Elephant Body Lotion','Una loción ligera de rápida absorción con una mezcla de aceites humectantes',"/images/products/skin-8.jpg",4);
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('Glossier Serum','Serum de acido hialuronico que contiene vitamina B5',5);
+insert into tabla_productos (nombreProducto, descripcion, fotoProducto, idUsuario) 
+values ('Glossier Serum','Serum de acido hialuronico que contiene vitamina B5',"/images/products/skin-9.jpg",5);
 
-insert into tabla_productos (nombreProducto, descripcion, idUsuario) 
-values ('Lip Treatment','balsamo labial reparador que hidrata la piel', 1);
+insert into tabla_productos (nombreProducto, descripcion, fotoProducto, idUsuario) 
+values ('Lip Treatment','balsamo labial reparador que hidrata la piel',"/images/products/skin-10.jpg", 1);
 
 create table comentarios(
 id int unsigned primary key auto_increment,
