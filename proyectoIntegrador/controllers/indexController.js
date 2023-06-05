@@ -35,7 +35,7 @@ const indexController =  {
   
     store: function (req,res) {
         let errors= {}; //almacenamiento 
-        if (req.body.mail==""){ //VALIDANDO FORMULARIOS 
+        if (req.body.mail==" "){ //VALIDANDO FORMULARIOS 
             errors.message = "El campo email esta vacío";
             res.locals.errors = errors;
             res.render("register")
@@ -51,7 +51,7 @@ const indexController =  {
             let criterio = {
                 email: req.body.mail
             }
-            User.findAll({where: [criterio]})
+            User.findOne({where: [criterio]})
                 .then(data=> {
                     errors.message = "El email ya existe!";
                     res.locals.errors = errors;

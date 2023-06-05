@@ -9,7 +9,7 @@ router.get('/',indexController.principal );
 router.get("/register", indexController.index);
 router.get("/login", indexController.login);
 router.get("/search",indexController.search);
-router.post("/register", indexController.store);
+
 router.post("/login", indexController.ingresar);
 
 
