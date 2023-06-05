@@ -1,5 +1,5 @@
 module.exports=function (sequelize, dataTypes) {
-    let alias= 'Comentario';
+    let alias= 'Comentario'; //el nombre de la tabla en singular y con camelcase
     let cols= {
         id:{
             autoIncrement:true,
@@ -11,7 +11,7 @@ module.exports=function (sequelize, dataTypes) {
 
         },
         productosId:{
-            type:dataTypes.TEXT
+            type:dataTypes.INTEGER
 
         },
         comentario:{
