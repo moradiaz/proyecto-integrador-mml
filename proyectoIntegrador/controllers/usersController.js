@@ -80,19 +80,26 @@ const usersController = {
         
     },
     ingresar: function(req, res){
+        //res.send(req.body)
         let errors = {};
-        let info = req.body;
+        let {mail, password, recordame} = req.body;
         let filtro ={
-            where:[{email:info.mail}]
+            where:[{email:mail}]
         };
         User.findOne(filtro)
         .then(result =>{
-            if (result =! null){
-                let check = bcryptjs.compareSync(info.password, result.password);
+            if (result == null){
+                errors.message = 'El usuario no existe';
+                res.locals.errors = errors;
+                return res.render('login')
+            }
+            else{
+                //res.send(result)
+                let check = bcryptjs.compareSync(password, result.password);
                 if (check){
-                    req.session.user = result.dataValues;
-                    req.locals.user = result.dataValues;
-                    if (info.recordame){
+                    req.session.user = result;
+                    res.locals.user = result;
+                    if (recordame){
                         res.cookie("userId",result.dataValues.id,{maxAge:1000 *60 *10})
                     }
                     return res.redirect('/')
