@@ -77,8 +77,12 @@ const usersController = {
     },
     
     login: function (req,res) {
-        return res.render("login")
-        
+        if(req.session.user != undefined) {
+            return res.redirect('/')
+        }
+        else {
+            return res.render("login")
+        }
     },
     processLogin: function(req, res){
         //res.send(req.body)
@@ -116,12 +120,10 @@ const usersController = {
 
     },
     logout: function(req, res){
-        
-    }
-     
-
-        
-    
+        req.session.destroy()
+        res.clearCookie('userId')
+        res.redirect('/') 
+    }   
     
 }
 
