@@ -28,6 +28,9 @@ const usersController = {
     editar: function (req, res) {
         return res.render('profile-edit', {data:data} )
     },
+    index: function (req,res){  
+        res.render("register")
+    },
     store: function (req,res) {
         let errors= {}; //almacenamiento 
         if (req.body.mail==" "){ //VALIDANDO FORMULARIOS 
@@ -72,14 +75,12 @@ const usersController = {
         }
        
     },
-    index: function (req,res){  
-        res.render("register")
-    },
+    
     login: function (req,res) {
         return res.render("login")
         
     },
-    ingresar: function(req, res){
+    processLogin: function(req, res){
         //res.send(req.body)
         let errors = {};
         let {mail, password, recordame} = req.body;
@@ -113,6 +114,9 @@ const usersController = {
         })
 
 
+    },
+    logout: function(req, res){
+        
     }
      
 

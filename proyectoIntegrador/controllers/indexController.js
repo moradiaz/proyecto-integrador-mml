@@ -29,19 +29,27 @@ const indexController =  {
         
     },
     search: function (req,res) {
-        let busqueda = req.query.search;
+        let busqueda = req.query.busqueda;
+        
         let relaciones = {
             include:[
                 {association:'productosUsuarios'},
-                {association:'comentarios'}
-            ],
-            where:[{[op.like]:"%"+busqueda+"%"}]
-        }
+                {association:'comentarios', include:[{association:'usuarioComentario'}]}
+            ]
+        };
         let criterio = {
-            where:[{nombre:{[op.like]:"%"+busqueda+"%"}}]
+            where:[
+                {nombreProducto:{[op.like]:"%"+busqueda+"%"}}
+            ],
+            order:[
+                ['nombreProducto', 'DESC']
+            ]
         }
         Product.findAll(criterio, relaciones)
-        .then(data => res.send(data))
+        .then(function(data){
+            return res.render('search-results', {productos:data})
+        })
+        //.then(data => res.render('search-results'))
         //return res.render("search-results")
         
     }
