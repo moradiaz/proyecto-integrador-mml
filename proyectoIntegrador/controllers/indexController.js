@@ -38,9 +38,11 @@ const indexController =  {
             ]
         };
         let criterio = {
-            where:[
-                {nombreProducto:{[op.like]:"%"+busqueda+"%"}}
-            ],
+            where:{
+                [op.or]:[
+                {nombreProducto:{[op.like]:"%"+busqueda+"%"}},
+                {descripcion:{[op.like]:"%"+busqueda+"%"}}]
+                },  
             order:[
                 ['nombreProducto', 'DESC']
             ]
@@ -49,6 +51,7 @@ const indexController =  {
         .then(function(data){
             return res.render('search-results', {productos:data})
         })
+        
         //.then(data => res.render('search-results'))
         //return res.render("search-results")
         

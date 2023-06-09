@@ -98,8 +98,8 @@ const usersController = {
                 //res.send(result)
                 let check = bcryptjs.compareSync(password, result.password);
                 if (check){
-                    req.session.user = result;
-                    res.locals.user = result;
+                    req.session.user = result.usuario;
+                    req.session.idUser = result.id;
                     if (recordame){
                         res.cookie("userId",result.dataValues.id,{maxAge:1000 *60 *10})
                     }

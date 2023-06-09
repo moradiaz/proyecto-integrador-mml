@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="/stylesheets/app.css">
 </head>
 <body>
-	<% if (locals.user != null) { %>
+	<% if (user) { %>
 		<%- include('./partials/headerLogueado') %>
 		<% } else { %>
 			<%- include('./partials/header') %>	 
