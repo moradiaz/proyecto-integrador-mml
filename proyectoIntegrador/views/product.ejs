@@ -24,7 +24,21 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= data.nombreProducto %></h2> 
 			<p class="product-detail-description">
-				<a href="/product/agregarproducto">Editar</a>
+				<a href="/product/agregarproducto">Editar</a> 
+				<br>
+				<form action="/product/borrar" method="post">
+					<input name="id" type="text" value="<%= data.id %>" hidden>
+					<button class="borrar" type="submit">
+						Borrar <i class="fas fa-sign-in-alt"></i>
+					</button>
+				</form> 
+				<p>
+				 <a href="/users/perfil/<%= data.productosUsuarios.id %>"> Publicado por <%= data.productosUsuarios.usuario %> </a>
+				 <br>  
+				 <% if (locals.errors)  { %>
+					<p style="color: rgb(243, 21, 21);"> <%= locals.errors.message %></p>
+				<% } %>
+				</p>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -33,6 +47,7 @@
 					<img src="<%= data.fotoProducto %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= data.descripcion %></p>
+						
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
@@ -59,7 +74,7 @@
 		</div>
 	</div>
 	<!-- /product detail -->
-
+	
 	<%- include("./partials/footer") %>
 
 </body>	
