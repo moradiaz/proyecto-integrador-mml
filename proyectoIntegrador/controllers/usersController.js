@@ -26,7 +26,44 @@ const usersController = {
         
     },
     editar: function (req, res) {
-        return res.render('profile-edit', {data:data} )
+        let id = req.params.id
+       
+        User.findByPk (id) 
+        .then(function (data) {
+       
+            return res.render("profile-edit" , {data:data})
+        })
+       
+    },
+    editarPost: function(req, res){
+        let id = req.body.id
+
+        User.findByPk (id) 
+        .then(function (data) {
+            if (req.session.idUser == data.id) {
+                User.update({
+                    email: req.body.mail,
+                    usuario: req.body.user,
+                    password:req.body.pass,
+                    fecha: req.body.fechanacimiento,
+                    dni: req.body.documento,
+                    foto: req.body.foto
+                    
+                },{where: [{id: id}]})
+                res.redirect('/')
+            }
+            else {
+                let errors = {}
+                errors.message = "No se puede editar este perfil"
+                res.locals.errors = errors; 
+                return res.render('profile-edit', {data:data})
+            }
+     
+        })
+        .catch (function (error) {
+            res.send({error})
+            console.log(error);
+        })
     },
     index: function (req,res){  
         res.render("register")

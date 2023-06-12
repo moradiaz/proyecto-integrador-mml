@@ -27,16 +27,21 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<form action="/users/editarperfil" method="get">
-					<input class="form-input" type="email" name="mail" value="" placeholder="nuevo mail">
-					<input class="form-input" type="text" name="user" value="" placeholder="nuevo usuario">
-					<input class="form-input" type="password" name="pass" value="" placeholder="nueva contraseña">
-					<input class="form-input" type="date" name="fechanacimiento" value="" placeholder="editar fecha de nacimiento">
-					<input class="form-input" type="number" name="documento" value="" placeholder="editar nro de documento">
-					<input class="form-input" type="text" name="foto" value="" placeholder="editar foto de perfil">
+				<form action="/users/editarperfil" method="post">
+					<input class="form-input" type="text" name="id" value="<%= data.id %>">
+					<input class="form-input" type="email" name="mail" value="<%= data.email %>" placeholder="nuevo mail">
+					<input class="form-input" type="text" name="user" value="<%= data.usuario %>" placeholder="nuevo usuario">
+					<input class="form-input" type="password" name="pass" value="<%= data.password %>" placeholder="nueva contraseña">
+					<input class="form-input" type="date" name="fechanacimiento" value="<%= data.fecha %>" placeholder="editar fecha de nacimiento">
+					<input class="form-input" type="number" name="documento" value="<%= data.dni %>" placeholder="editar nro de documento">
+					<input class="form-input" type="text" name="foto" value="<%= data.foto %>" placeholder="editar foto de perfil">
+					<button type="submit"> Editar</button>
 				</form>
 			</h2>
 
+			<% if (locals.errors)  { %>
+				<p style="color: rgb(243, 21, 21);"> <%= locals.errors.message %></p>
+			<% } %>
 
 	<%- include("./partials/footer") %>
 </body>

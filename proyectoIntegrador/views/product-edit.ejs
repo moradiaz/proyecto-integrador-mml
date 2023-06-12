@@ -36,6 +36,9 @@
 				</form>
 
 			</h2>
+			<% if (locals.errors)  { %>
+				<p style="color: rgb(243, 21, 21);"> <%= locals.errors.message %></p>
+			<% } %>
 
 	<%- include("./partials/footer") %>
 </body>

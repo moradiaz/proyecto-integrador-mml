@@ -107,7 +107,7 @@ const productControllers =  {
             let errors = {}
             errors.message = "No se puede editar este producto"
             res.locals.errors = errors; 
-            return res.render('product', {data:data, comentarios: data.comentarios})
+            return res.render('product-edit', {data:data, comentarios: data.comentarios})
         }
  
     })

@@ -7,7 +7,8 @@ const usersController = require('../controllers/usersController')
 router.get('/perfil/:id', usersController.perfil);
 router.post("/perfil", usersController.store);
 
-router.get("/editarperfil", usersController.editar);
+router.get("/editarperfil/:id", usersController.editar);
+router.post('/editarperfil', usersController.editarPost)
 
 router.get("/register", usersController.index);
 

@@ -7,6 +7,7 @@ const controladorI = require('../controllers/indexController')
 /* GET home page. */
 router.get('/',indexController.principal );
 router.get("/search",indexController.search);
+router.get('/searchusuarios', indexController.searchUsuarios);
 
 
 
