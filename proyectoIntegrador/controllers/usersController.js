@@ -1,12 +1,12 @@
 const data= require("../data/data")
-const db = require('../database/models')
-const User = db.Usuario;
-const bcryptjs = require('bcryptjs');
+const db = require('../database/models') 
+const User = db.Usuario; 
+const bcryptjs = require('bcryptjs'); 
 
 const usersController = {
     perfil: function(req, res) {
-        let id = req.params.id
-        let relaciones = {
+        let id = req.params.id 
+        let relaciones = { 
             include:[
                 {association: 'usuarioComentario'},
                 {association:'productosUsuarios', include:[{association:'comentarios'}]}
@@ -14,7 +14,7 @@ const usersController = {
                 
             ]
         }
-        User.findByPk(id, relaciones)
+        User.findByPk(id, relaciones) 
         
         .then(function(data){
             return res.render('profile', {data:data})

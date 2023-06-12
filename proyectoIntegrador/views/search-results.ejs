@@ -26,6 +26,10 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
+
+		<% if (productos.length == 0) { %>
+			<p class="products-title">No hay resultados de busqueda</p>
+		<% } else { %>
 			<h2 class="col-12"> <i> <br> 
 				<% for( let i = 0; i < productos.length; i++ ) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
@@ -46,6 +50,11 @@
 					<% } %>
 		
 			</h2>
+		<% } %>
+		
+		
+		 
+			
 
 
 	<%- include("./partials/footer") %>

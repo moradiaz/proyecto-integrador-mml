@@ -1,14 +1,14 @@
 const data= require("../data/data")
 const db = require('../database/models') //importando los modelos -- db variable que nos trae sequelize 
 const Product = db.Producto;
-const op = db.Sequelize.Op;
+const op = db.Sequelize.Op; 
 
 const indexController =  {
     principal:function(req, res, next) {
         let relaciones = {
             include:[
-                {association:'productosUsuarios'},
-                {association:'comentarios'}
+                {association:'productosUsuarios'}, 
+                {association:'comentarios'} 
             ]
         }
         Product.findAll(relaciones,
@@ -39,7 +39,7 @@ const indexController =  {
         };
         let criterio = {
             where:{
-                [op.or]:[
+                [op.or]:[ 
                 {nombreProducto:{[op.like]:"%"+busqueda+"%"}},
                 {descripcion:{[op.like]:"%"+busqueda+"%"}}]
                 },  
@@ -47,7 +47,7 @@ const indexController =  {
                 ['nombreProducto', 'DESC']
             ]
         }
-        Product.findAll(criterio, relaciones)
+        Product.findAll(criterio, relaciones) 
         .then(function(data){
             return res.render('search-results', {productos:data})
         })

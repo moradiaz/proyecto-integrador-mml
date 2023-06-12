@@ -24,7 +24,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= data.nombreProducto %></h2> 
 			<p class="product-detail-description">
-				<a href="/product/agregarproducto">Editar</a> 
+				<a href="/product/editarproducto/<%= data.id %>">Editar</a> 
 				<br>
 				<form action="/product/borrar" method="post">
 					<input name="id" type="text" value="<%= data.id %>" hidden>

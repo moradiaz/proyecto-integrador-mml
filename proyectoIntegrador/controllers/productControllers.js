@@ -63,7 +63,7 @@ const productControllers =  {
        
         if (req.session.idUser == data.idUsuario) {
             Product.destroy({ where: [{id: id}]})
-            res.redirect('/users/perfil')
+            res.redirect('/')
         }
         else {
             let errors = {}
@@ -76,6 +76,46 @@ const productControllers =  {
     .catch (function (error) {
         console.log(error);
     })
+    }, 
+    editar: function(req,res){
+        let id = req.params.id
+       
+        Product.findByPk (id) 
+        .then(function (data) {
+       
+            return res.render("product-edit" , {data:data, comentarios: data.comentarios})
+        })
+       
+        
+    },
+    editarPost: function (req,res){
+        let id = req.body.id
+
+    Product.findByPk (id) 
+    .then(function (data) {
+     
+        if (req.session.idUser == data.idUsuario) {
+            Product.update({
+                fotoProducto: req.body.imagen,
+                nombreProducto: req.body.nombreproducto,
+                descripcion:req.body.descripcion,
+                
+            },{where: [{id: id}]})
+            res.redirect('/')
+        }
+        else {
+            let errors = {}
+            errors.message = "No se puede editar este producto"
+            res.locals.errors = errors; 
+            return res.render('product', {data:data, comentarios: data.comentarios})
+        }
+ 
+    })
+    .catch (function (error) {
+        res.send({error})
+        console.log(error);
+    })
     }
+    
 }
 module.exports = productControllers;
