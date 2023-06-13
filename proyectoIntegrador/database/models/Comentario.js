@@ -17,14 +17,14 @@ module.exports=function (sequelize, dataTypes) {
         comentario:{
             type:dataTypes.STRING
         },
-        createdAt:{
+       /*  createdAt:{
             type:dataTypes.DATE,
             allowNull: false,
         },
         updatedAt:{
             type:dataTypes.DATE,
             allowNull: false,
-        },
+        }, */
         deletedAt:{
             type:dataTypes.DATE,
             allowNull: true,

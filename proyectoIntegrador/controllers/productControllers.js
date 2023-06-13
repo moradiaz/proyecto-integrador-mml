@@ -33,10 +33,8 @@ const productControllers =  {
         let relaciones = {
             include:[
                 {association: 'comentarios', include:[{association:'usuarioComentario'}]},
-                {association:'productosUsuarios'}
-               
-                
-            ]
+                {association:'productosUsuarios'}], 
+                order: [[{model: Comentario, as: 'comentarios'}, 'createdAt', 'DESC']]
         }
         Product.findByPk(id, relaciones)
         
@@ -115,6 +113,19 @@ const productControllers =  {
         res.send({error})
         console.log(error);
     })
+    }, 
+    crearComentario: function (req,res) {
+        Comentario.create({
+          usuariosId: req.session.idUser, 
+          productosId: req.params.id, 
+          comentario: req.body.comentario
+        })
+        .then((data) => {
+            return res.redirect('/')
+        })
+        .catch((error) => {
+            res.send(error)
+        })
     }
     
 }

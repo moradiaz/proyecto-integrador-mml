@@ -7,6 +7,7 @@ router.post('/agregarproducto', productControllers.storeProduct);
 router.post('/borrar', productControllers.borrar)
 router.post('/editarproducto', productControllers.editarPost);
 router.get('/editarproducto/:id', productControllers.editar);
+router.post('/:id', productControllers.crearComentario)
 router.get('/:id', productControllers.producto)
  
 
