@@ -44,7 +44,7 @@ const usersController = {
                 User.update({
                     email: req.body.mail,
                     usuario: req.body.user,
-                    password:req.body.pass,
+                    password: bcryptjs.hashSync(req.body.pass,12),
                     fecha: req.body.fechanacimiento,
                     dni: req.body.documento,
                     foto: req.body.foto
